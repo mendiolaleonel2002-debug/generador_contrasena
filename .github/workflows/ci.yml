@@ -1,0 +1,25 @@
+name: Run  Test
+
+on: [push, pull_request]
+
+permissions:
+    contents: read
+    packages: write
+
+jobs:
+    test:
+        runs-on: [ubuntu-latest]
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+            - name: Setup Python
+              uses: actions/setup-python@v4
+              with: 
+                python-version: "3.13.7"
+            - name: Install dependencies
+              run: pip install -r requirements-dev.txt
+            - name: Run tests
+              run: pytest
+            - name: Check Linting
+              run: flake8 .

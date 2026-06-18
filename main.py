@@ -21,6 +21,5 @@ def main():
 
     print("Contraseña:", password)
 
-
 if __name__ == "__main__":
     main()
