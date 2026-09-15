@@ -1,5 +1,6 @@
 from generator.password_generator import (
     generator_password,
+    has_lowercase,
     has_uppercase,
     has_number,
     has_symbol
@@ -14,6 +15,10 @@ def test_password_length():
 def test_password_is_string():
     password = generator_password(10)
     assert isinstance(password, str)
+
+
+def test_has_lowercase():
+    assert has_lowercase("abc") is True
 
 
 def test_has_uppercase():

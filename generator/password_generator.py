@@ -14,6 +14,10 @@ def generator_password(length=12):
     return password
 
 
+def has_lowercase(password):
+    return any(c.islower() for c in password)
+
+
 def has_uppercase(password):
     return any(c.isupper() for c in password)
 
