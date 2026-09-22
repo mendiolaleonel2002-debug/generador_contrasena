@@ -37,3 +37,5 @@ def test_generator_password_length_range():
     for length in range(4, 20):
         password = generator_password(length)
         assert len(password) == length
+
+print("Test completados")
